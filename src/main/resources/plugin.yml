@@ -1,0 +1,13 @@
+name: cmds
+version: '1.0'
+main: net.horyzon.cmds.Cmds
+api-version: '1.20'
+authors: [ horyzonboi ]
+
+commands:
+  Kit:
+    description: "Gives the shitty ass kits"
+    usage: "/Kit [1,2]"
+    aliases: [basic-kit]
+    permission: permission.node
+    permission-message: "You do not have permission to use this command"
