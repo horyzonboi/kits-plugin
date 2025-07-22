@@ -7,7 +7,7 @@ authors: [ horyzonboi ]
 commands:
   Kit:
     description: "Gives the shitty ass kits"
-    usage: "/Kit [1,2]"
+    usage: "/Kit [netherite,diamomd]"
     aliases: [basic-kit]
     permission: permission.node
     permission-message: "You do not have permission to use this command"

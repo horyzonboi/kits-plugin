@@ -23,17 +23,18 @@ public class RandomCommand implements CommandExecutor {
             List<ItemStack> netheriteSet = new ArrayList<>();
             netheriteSet.add(new ItemStack(Material.NETHERITE_HELMET));
             netheriteSet.add(new ItemStack(Material.NETHERITE_CHESTPLATE));
+            netheriteSet.add(new ItemStack(Material.NETHERITE_LEGGINGS));
+            netheriteSet.add(new ItemStack(Material.NETHERITE_BOOTS));
 
 
-            if (args.length == 0) {                         //iron for now, TODO remove this and return false  on NO args, so user has to pick one
-                player.getInventory().addItem();
+            if (args.length == 0) {
+                commandSender.sendMessage("Please state a kit: Netherite | Diamond");
             } else if (args.length == 1) {
                 if (args[0].equals("netherite")) {          //netherite kit
                     player.getInventory().setHelmet(netheriteSet.get(0));
                     player.getInventory().setChestplate(netheriteSet.get(1));
-                    player.getInventory().addItem(netheriteSet.get(1));//just to check
-
-
+                    player.getInventory().setLeggings(netheriteSet.get(2));
+                    player.getInventory().setBoots(netheriteSet.get(3));
                 } else if (args[0].equals("diamond")) {     //diamond kit
                     player.getInventory().addItem();
 

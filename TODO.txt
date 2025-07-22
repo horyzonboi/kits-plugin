@@ -1,0 +1,4 @@
+TODO:
+Introduce Console + CommandBlock Support
+Add armor with enchantments
+Handle Permissions
