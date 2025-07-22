@@ -7,13 +7,11 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.util.io.BukkitObjectInputStream;
+
 import org.jetbrains.annotations.NotNull;
 
-import java.rmi.MarshalException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,9 +51,10 @@ public class RandomCommand implements CommandExecutor {
                 return false;
             }
         } else {
-            String playerName = args[1];
-            Player player = Bukkit.getPlayerExact(playerName);
+
             if (args.length == 2) {
+                String playerName = args[1];
+                Player player = Bukkit.getPlayerExact(playerName);
                 if (player != null && player.isOnline()) {
                     if (args[0].equalsIgnoreCase("Netherite")) {
                         player.getInventory().setHelmet(netheriteSet.get(0));
@@ -72,7 +71,7 @@ public class RandomCommand implements CommandExecutor {
                 } else {
                     commandSender.sendMessage("Player either Offline or Inaccessible ");
                 }
-            } else {
+            } else if(args.length == 1) {
                 if (commandSender instanceof ConsoleCommandSender) {
                     commandSender.sendMessage(ChatColor.ITALIC + "In order to execute through console, use the following parameters!");
                     commandSender.sendMessage("/kit <Netherite | Diamond> <PlayerName>");
