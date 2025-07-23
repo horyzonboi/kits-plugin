@@ -1,4 +1,4 @@
 TODO:
-Introduce Console + CommandBlock Support
+Introduce Console + CommandBlock Support //Done
 Add armor with enchantments
 Handle Permissions
